@@ -11,7 +11,8 @@ keymap.set('n', '-', '<C-x>')
 -- keymap.set('n', 'dw', 'vb"_d')
 
 -- escape
-keymap.set('i', '<esc>', 'jj')
+keymap.set('i', '<esc>', '<C-[>')
+vim.api.nvim_set_keymap('i', 'jj', '<ESC>', { noremap = true, silent = true })
 
 -- move
 keymap.set('n', 'j', 'gj')
