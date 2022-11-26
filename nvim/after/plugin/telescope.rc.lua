@@ -11,6 +11,9 @@ local fb_actions = require 'telescope'.extensions.file_browser.actions
 
 telescope.setup {
   defaults = {
+    file_ignore_patterns = {
+      "node_modules", ".git"
+    },
     mappings = {
       n = {
         ['q'] = actions.close
@@ -36,27 +39,10 @@ telescope.setup {
         }
       }
     },
-    gitmoji = {
-      action = function(entry)
-        -- entry = {
-        --     display = "🎨 Improve structure / format of the code.",
-        --     index = 1,
-        --     ordinal = "Improve structure / format of the code.",
-        --     value = "🎨"
-        -- }
-        vim.ui.input({ prompt = "Enter commit msg: " .. entry.value .. " " }, function(msg)
-          if not msg then
-            return
-          end
-          vim.cmd(':G commit -m "' .. entry.value .. ' ' .. msg .. '"')
-        end)
-      end
-    }
   }
 }
 
 telescope.load_extension('file_browser')
-telescope.load_extension('gitmoji')
 
 local opts = { noremap = true, silent = true }
 vim.keymap.set('n', ';f', '<cmd>lua require("telescope.builtin").find_files({ no_ignore = false, hidden = true })<cr>',

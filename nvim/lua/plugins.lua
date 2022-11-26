@@ -38,5 +38,4 @@ packer.startup(function(use)
   use 'williamboman/mason.nvim'
   use 'williamboman/mason-lspconfig.nvim'
   use 'terrortylor/nvim-comment'
-  use 'olacin/telescope-gitmoji.nvim'
 end)

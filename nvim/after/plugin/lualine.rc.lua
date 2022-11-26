@@ -14,7 +14,7 @@ lualine.setup {
     lualine_c = { {
       'filename',
       file_status = true, -- displays file status
-      path = 0 -- 0 = just filename
+      path = 1
     } },
     lualine_y = { 'progress' },
     lualine_z = { 'location' }
@@ -22,11 +22,11 @@ lualine.setup {
   inactive_sections = {
     lualine_a = {},
     lualine_b = {},
-    lualine_c = {{
+    lualine_c = { {
       'filename',
       file_status = true,
       path = 1 -- 1 = relative path
-    }},
+    } },
     lualine_x = { 'location' },
     lualine_y = {},
     lualine_z = {}
