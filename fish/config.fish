@@ -34,6 +34,7 @@ alias pn='pnpm'
 alias cat='bat'
 alias ll='exa -l --icons'
 alias lg='lazygit'
+alias g="git"
 
 set -x BAT_THEME 'Dracula'
 
