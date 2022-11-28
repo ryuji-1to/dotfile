@@ -41,3 +41,8 @@ set -x BAT_THEME 'Dracula'
 set -g -x PATH $PATH /opt/homebrew/bin
 source /opt/homebrew/opt/asdf/libexec/asdf.fish
 starship init fish | source
+
+# peco
+function fish_user_key_bindings
+    bind \cr peco_select_history
+end
