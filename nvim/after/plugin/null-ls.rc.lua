@@ -26,9 +26,12 @@ null_ls.setup {
     null_ls.builtins.diagnostics.eslint_d.with({
       diagnostics_format = '[eslint] #{m}\n(#{c})'
     }),
-    -- null_ls.builtins.formatting.prettier.with({
-    -- prefer_local = "node_modules/.bin"
-    --}),
+    null_ls.builtins.formatting.prettier.with({
+      condition = function(utils)
+        return utils.has_file { ".prettierrc", ".prettierrc.js" }
+      end,
+      prefer_local = "node_modules/.bin"
+    }),
     null_ls.builtins.diagnostics.fish
   },
   on_attach = function(client, bufnr)

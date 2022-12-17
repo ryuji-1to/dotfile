@@ -11,6 +11,11 @@ module.exports = {
     "docs",
     "perf",
     "ci",
+    "type",
+    "hotflix",
+    "begin",
+    "improve",
+    "package",
   ],
   maxMessageLength: 64,
   minMessageLength: 3,
@@ -61,6 +66,31 @@ module.exports = {
       emoji: "🧪",
       description: "テストコードの変更",
       value: "test",
+    },
+    type: {
+      emoji: "🏷️",
+      description: "型の追加、更新",
+      value: "type",
+    },
+    begin: {
+      emoji: "🎉",
+      description: "プロジェクトスタート",
+      value: "begin",
+    },
+    hotflix: {
+      emoji: "🚑️",
+      description: "致命的なバグの修正",
+      value: "hotflix",
+    },
+    improve: {
+      emoji: "🎨",
+      description: "機能の更新、フォーマットなど",
+      value: "improve",
+    },
+    package: {
+      emoji: "📦️",
+      description: "パッケージの追加更新など",
+      value: "package",
     },
   },
 };
