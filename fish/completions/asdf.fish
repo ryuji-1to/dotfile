@@ -1,0 +1,1 @@
+/Users/ryuji-ito/.asdf/completions/asdf.fish

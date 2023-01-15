@@ -1,0 +1,113 @@
+# シェルプロンプトの間に空行を追加します
+add_newline = true
+# format = """\
+#   $username\
+#   $hostname\
+#   $directory\
+#   $git_branch\
+#   $git_commit\
+#   $git_state\
+#   $git_status\
+#   $cmd_duration\
+#   $nodejs\
+#   $rust\
+#   $python\
+#   $docker_context\
+#   $time\
+#   $custom\
+#   $line_break\
+#   $character\
+#   """
+format = """
+[┌───> ](bold purple)$directory$git_branch$git_commit$git_state$git_status
+[├─> ](bold purple)$docker_context$rust$nodejs$python$package$conda$cmd_duration
+[└─ ](bold purple)$character"""
+# "❯" 記号を "➜" 記号に置き換えます
+[character]                            # 設定しようとしているモジュールの名前は "character" です。
+success_symbol = "[❯❯❯](bold green)"     # "success_symbol" セグメントが「太字の緑色」スタイルの "➜" に設定されています
+error_symbol = "[❯❯❯](bold red)"
+
+[directory]
+truncation_length =3
+format = "[$path]($style)[$lock_symbol]($lock_style) "
+style="bold fg:#FFB86C"
+truncate_to_repo = false
+truncation_symbol='~/'
+home_symbol='~🏠'
+
+[package]
+disabled = false
+
+[docker_context]
+format = "via [$symbol$context]($style) "
+
+[nodejs]
+format = "via [$symbol$version]($style) "
+style = "bold green"
+
+[python]
+format = "via [$symbol$version]($style) "
+style = "bold green"
+
+[rust]
+format = "via [$symbol$version]($style) "
+style = "bold green"
+
+[aws]
+# format = "on [$symbol$region]($style) "
+style = "bold yellow"
+disabled = true
+# symbol = " "
+[aws.region_aliases]
+# ap-southeast-2 = "au"
+# us-east-1 = "va"
+ap-northeast-1 = "jp"
+
+[git_branch]
+format = "on [$symbol$branch]($style) "
+symbol = "🏕 "
+style = "bold green"
+
+[git_commit]
+commit_hash_length = 8
+style = "bold white"
+
+[git_state]
+format = '[\($state( $progress_current of $progress_total)\)]($style) '
+
+[git_status]
+conflicted = "⚔️ "
+ahead = "🏎️ 💨 "
+behind = "🐢 "
+diverged = "🔱 🏎️ 💨 ×${ahead_count} 🐢 ×${behind_count}"
+untracked = "🛤️  "
+stashed = "📦 "
+modified = "📝 "
+staged = "🎉 "
+renamed = "📛 "
+deleted = "🗑️ "
+style = "bright-white"
+format = "$all_status$ahead_behind"
+
+[username]
+style_user = "bold dimmed blue"
+show_always = false
+
+[hostname]
+ssh_only = false
+format = "<[$hostname]($style)>"
+trim_at = "-"
+style = "bold dimmed white"
+disabled = false
+
+[battery]
+full_symbol = "🔋"
+charging_symbol = "🔌"
+discharging_symbol = "⚡"
+disabled=true
+
+[time]
+time_format = "%R"
+style = "bold yellow"
+format = "at 🕙$time($style) "
+disabled = false
