@@ -17,6 +17,8 @@ module.exports = {
     "begin",
     "improve",
     "package",
+    "config",
+    "remove",
   ],
   maxMessageLength: 64,
   minMessageLength: 3,
@@ -97,6 +99,16 @@ module.exports = {
       emoji: "📦️",
       description: "パッケージの追加更新など",
       value: "package",
+    },
+    config: {
+      emoji: "🔧",
+      description: "設定ファイルの更新など",
+      value: "config",
+    },
+    remove: {
+      emoji: "🔥",
+      description: "コードの削除など",
+      value: "remove",
     },
   },
 };
