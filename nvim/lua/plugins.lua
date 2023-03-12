@@ -31,6 +31,7 @@ packer.startup(function(use)
   use 'williamboman/mason.nvim'
   use 'williamboman/mason-lspconfig.nvim'
   use 'terrortylor/nvim-comment'
+  use 'rust-lang/rust.vim'
   use { 'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   } -- Statusline
